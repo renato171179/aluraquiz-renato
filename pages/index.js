@@ -45,7 +45,7 @@ export default function Home() {
             >
               <input
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Seu Nome"
+                placeholder="Digite seu nome"
               />
               <button type="submit" disabled={name.length === 0}>
                 Jogar

@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import React, { useState } from 'react';
 import styled from 'styled-components';
@@ -9,6 +10,8 @@ import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import Widget from '../src/components/Widget';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -35,7 +38,7 @@ export default function Home() {
       <QuizContainer>
         <Widget>
           <Widget.Header>
-            <h1>The Legend of zelda</h1>
+            <h1>#JavaScript Quiz</h1>
           </Widget.Header>
           <Widget.Content>
             <form onSubmit={function (e) {
@@ -43,14 +46,15 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input
+              <Input
+                name="nomeUsuario"
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Digite seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
+              <Button type="submit" disabled={name.length === 0}>
+                {`Jogar ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>

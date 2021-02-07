@@ -52,7 +52,7 @@ export default function Home() {
                 placeholder="Digite seu nome"
                 value={name}
               />
-              <Button type="submit" disabled={name.length === 0}>
+              <Button type="submit" name={name} disabled={name.length === 0}>
                 {`Jogar ${name}`}
               </Button>
             </form>
